@@ -30,14 +30,7 @@
 
                 <!-- Content -->
                 <section>
-                    <header class="main">
-                        <h1>{{ page.title }}: {{page.headline}}</h1>
-                    </header>
-
-                    {% if page.image %}
-                        <span class="image main"><img src="{{site.url}}{{site.baseurl}}/{{page.image}}" alt="" /></span>
-                    {% endif %}
-
+                 
                     {{ content }}
 
                     <section>
@@ -45,11 +38,14 @@
                           <h2>Gallery</h2>
                         </header>
                         <div class="posts">
-                        {% for research in research_sorted limit: 6 %}
+                        {% for research in research_sorted limit: 20 %}
                           <article>
-                            <a class="image"><img src="{{site.url}}{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
+                            <a class="image" href="{{research.site}}"><img src="{{site.url}}{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
                             <h3>{{ research.title }}</h3>
-                            <p>{{ research.teasing }}...</p>
+                            <p>{{ research.teasing }}</p>
+                            <ul class="actions">
+                                <li><a href="{{research.site}}" class="button medium">More</a></li>
+                            </ul>
                           </article>
                         {% endfor %}
                         </div>

@@ -1,10 +1,10 @@
 ---
 layout:
-name: Dimitri Papadopoulos
+name: Aymerci Gaudin
 position: engineer
 cat: gaia
 subcat: platform
 avatar:
-joined: 2006
+joined: 2024
 ---
 

@@ -1,9 +1,9 @@
 ---
 layout:
 name: Yasmina Mekki
-position: gradstudent
+position: alumni
 cat: gaia
-subcat: genetics
+subcat: brainomics
 avatar:
 joined: 2016
 ---

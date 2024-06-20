@@ -11,14 +11,12 @@
 {% assign labs_sorted = site.labs | sort: "cat" %}
 {% assign unique_labs = '' | split: ',' %}
 {% for lab in labs_sorted %}
-  {% if lab.subcat == "team" %}
       {% unless lab.cat == previous %}
         {% assign key = "~" | append: lab.cat %}
         {% assign unique_labs = unique_labs | push: key %}
       {% endunless %}
       {% assign unique_labs = unique_labs | push: lab.title %}
       {% assign previous = lab.cat %}
-  {% endif %}
 {% endfor %}
 
 <script>

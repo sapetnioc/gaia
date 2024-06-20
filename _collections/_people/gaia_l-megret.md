@@ -1,9 +1,9 @@
 ---
 layout:
 name: Lucile Mégret
-position: postdoc
+position: alumni
 cat: gaia
-subcat: genetics
+subcat: brainomics
 avatar:
 joined: 2017
 ---

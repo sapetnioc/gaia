@@ -4,10 +4,10 @@
     html5up.net | @ajlkn
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-{% assign lab = page.url | split: "/" %}
-{% assign lab = lab[-2] %}
+{% assign lab = "gaia" %}
 {% assign teams_sorted = site.labs | where: "cat", lab | where: "subcat", "team" | sort: "title"  %}
 {% assign cells_sorted = site.labs | where: "cat", lab | where: "subcat", "cell" | sort: "title"  %}
+{% assign research_sorted = site.research | sort: 'added' | reverse  %}
 
 <html>
 
@@ -36,6 +36,7 @@
 
                     {{ content }}
 
+                    <!-- Teams -->
                     <section>
                         <header class="major">
                           <h2>Teams</h2>
@@ -60,7 +61,7 @@
                                               "cea", 3, "", "{{team.leader}}")</script>
                             </p>
 
-                            <p>{{ team.teasing }}...</p>
+                            <p>{{ team.teasing }}</p>
                             <ul class="actions">
                                 {% if team.site %}
                                     <li><a href="{{team.site}}" class="button medium">More</a></li>
@@ -74,6 +75,7 @@
                     </section>
 
 
+                    <!-- Cells -->
                     <section>
                         <header class="major">
                           <h2>Cells</h2>
@@ -86,23 +88,49 @@
                         <div class="posts">
                         {% for cell in cells_sorted %}
                           <article>
-                            <a href="{{site.url}}{{site.baseurl}}{{cell.url}}" class="image"><img src="{{site.url}}{{site.baseurl}}/images/labs/{{cell.icon}}" alt="" /></a>
-                            <h3>{{ cell.title }}: {{cell.headline}}</h3>
+                           {% if cell.site %}
+                                <a href="{{cell.site}}" class="image"><img src="{{site.url}}{{site.baseurl}}/images/labs/{{cell.icon}}" alt="" /></a>
+                            {% else %}
+                                <a href="{{site.url}}{{site.baseurl}}{{cell.url}}" class="image"><img src="{{site.url}}{{site.baseurl}}/images/labs/{{cell.icon}}" alt="" /></a>
+                            {% endif %}
+                            <h3>{{ cell.title }}</h3>
                             <p>
                                 <b>Leader: </b>
                                 <script>mail2("{{cell.leader | replace: " ", "." | downcase}}",
                                               "cea", 3, "", "{{cell.leader}}")</script>
                             </p>
 
-                            <p>{{ cell.teasing }}...</p>
+                            <p>{{ cell.teasing }}</p>
                             <ul class="actions">
-                                <li><a href="{{site.url}}{{site.baseurl}}{{cell.url}}" class="button medium">More</a></li>
+                                {% if cell.site %}
+                                    <li><a href="{{cell.site}}" class="button medium">More</a></li>
+                                {% else %}
+                                    <li><a href="{{site.url}}{{site.baseurl}}{{cell.url}}" class="button medium">More</a></li>
+                                {% endif %}
                             </ul>
                           </article>
                         {% endfor %}
                         </div>
                     </section>
+                </section>
 
+                <!-- Gallery -->
+                <section>
+                    <header class="major">
+                      <h2>Gallery</h2>
+                    </header>
+                    <div class="posts">
+                    {% for research in research_sorted limit: 6 %}
+                      <article>
+                        <a class="image" href="{{research.site}}"><img src="{{site.url}}{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
+                        <h3>{{ research.title }}</h3>
+                        <p>{{ research.teasing }}</p>
+                        <ul class="actions">
+                            <li><a href="{{research.site}}" class="button medium">More</a></li>
+                        </ul>
+                      </article>
+                    {% endfor %}
+                    </div>
                 </section>
 
             </div>

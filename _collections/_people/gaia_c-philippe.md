@@ -3,7 +3,7 @@ layout:
 name: Cathy Philippe
 position: pi
 cat: gaia
-subcat: genetics
+subcat: brainomics
 avatar:
 joined: 2006
 ---

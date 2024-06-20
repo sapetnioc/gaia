@@ -1,9 +1,9 @@
 ---
 layout:
-name: Dimitri Papadopoulos
+name: Ivy Uszynski
 position: engineer
 cat: gaia
-subcat: platform
+subcat: architecture
 avatar:
 joined: 2006
 ---

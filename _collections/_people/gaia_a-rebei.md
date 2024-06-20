@@ -1,9 +1,9 @@
 ---
 layout:
 name: Amine Rebei
-position: postdoc
+position: alumni
 cat: gaia
-subcat: genetics
+subcat: brainomics
 avatar:
 joined: 2017
 ---

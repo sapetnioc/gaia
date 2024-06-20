@@ -6,16 +6,18 @@ expiration: 200
 ---
 
 <!-- Section -->
-Intership, PhD, PostDoc or engineer positions are offered in the project. Do not hesitate to <a href="mailto:{{site.email}}">contact us.</a>
+For a spontaneous application do not hesitate to <a href="mailto:{{site.email}}">contact us.</a>
 
 {% assign today = site.time | date: '%s' %}
 {% assign jobs_sorted = site.opportunities | sort: 'date' | reverse %}
-{% assign jobs_array = "phd|postdoc|internship" | split: "|" %}
+{% assign jobs_array = "permanent|phd|postdoc|internship" | split: "|" %}
 
 {% for item in jobs_array %}
 
 <div class="major">
-{% if item == 'phd' %}
+{% if item == 'permanent' %}
+    <h3>Permanent position</h3>
+{% elsif item == 'phd' %}
     <h3>PhD Scholarship</h3>
 {% elsif item == 'postdoc' %}
     <h3>PostDoctoral position</h3>
