@@ -23,7 +23,7 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Make build destination directory
-      run: mkdir $PWD/_site
+      run: mkdir $PWD/_site $PWD/.jekyll-cache
     - name: Where am I
       run: |
         echo $PWD
