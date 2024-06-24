@@ -1,7 +1,7 @@
 ---
 cat: gaia
 subcat: signature
-bestof: false
+bestof: true
 author: Benoit Dufumier et al.
 title: Exploring the potential of representation and transfer learning for anatomical neuroimaging - Application to psychiatry
 journal: NeuroImage

@@ -1,7 +1,7 @@
 ---
 cat: gaia
 subcat: platform
-bestof: false
+bestof: true
 author: Benoit Dufumier et al.
 title: OpenBHB - a Large-Scale Multi-Site Brain MRI Data-set for Age Prediction and Debiasing
 journal: NeuroImage
