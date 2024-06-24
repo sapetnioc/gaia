@@ -18,7 +18,11 @@ import yaml
 doc = """
 Convert BIBTEX to MD.
 Must install first pybtex.
-python bib2md -i test.bib -o out -c gaia -s genetics
+python3 bib2md -i data/architecture_v-20240621.bib -o out/architecture -c gaia -s architecture
+python3 bib2md -i data/signature_v-20240621.bib -o out/signature -c gaia -s signature
+python3 bib2md -i data/brainomics_v-20240621.bib -o out/brainomics -c gaia -s brainomics
+python3 bib2md -i data/platform_v-20240621.bib -o out/platform -c gaia -s platform
+python3 bib2md -i data/ginkgo_v-20240621.bib -o out/ginkgo -c gaia -s ginkgo
 """
 parser = argparse.ArgumentParser(description=doc)
 parser.add_argument(
@@ -52,12 +56,14 @@ for key, item in biblio.items():
     print("--", key)
     # pprint(item)
     key = key.replace(os.sep, "_")
-    item["author"] = u"{0} {1} et al.".format(
+    if not "first" in item["author"][0]:
+        continue
+    item["author"] = "{0} {1} et al.".format(
         item["author"][0]["first"],
         item["author"][0]["last"])
     md_file = os.path.join(args.outdir, key + ".md")
-    content = [u"---", u"cat: {0}".format(args.cat),
-               u"subcat: {0}".format(args.subcat), u"bestof: false"]
+    content = ["---", f"cat: {args.cat}", f"subcat: {args.subcat}",
+               "bestof: false"]
     for _key in ["author", "title", "journal", "year", "type", "url", "doi",
                  "booktitle", "team"]:
         value = item.get(_key, None)
@@ -68,8 +74,8 @@ for key, item in biblio.items():
         for char in (":", ):
             value = value.replace(char, " -")
         content.append(u"{0}: {1}".format(_key, value))
-    content += [u"---"]
+    content += ["---"]
     print(content)
     with open(md_file, "wt") as of:
-        of.write(u"\n".join(content).encode("utf8"))
+        of.write("\n".join(content))
     

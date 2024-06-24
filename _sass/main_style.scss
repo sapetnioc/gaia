@@ -73,7 +73,7 @@
 }
 
 .list-item-people {
-  display: inline-block;
+  // display: inline-block;
   padding-right: 4em;
 }
 
@@ -89,6 +89,7 @@
 
 .list-post-title > a {
   border-bottom: none;
+  margin: 0;
 }
 
 #main > .inner > section {

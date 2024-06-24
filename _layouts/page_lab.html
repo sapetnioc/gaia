@@ -37,7 +37,7 @@
                     {{ content }}
 
                     <!-- Teams -->
-                    <section>
+                    <section id="teams">
                         <header class="major">
                           <h2>Teams</h2>
                         </header>
@@ -76,7 +76,7 @@
 
 
                     <!-- Cells -->
-                    <section>
+                    <section id="cells">
                         <header class="major">
                           <h2>Cells</h2>
                         </header>
@@ -115,18 +115,18 @@
                 </section>
 
                 <!-- Gallery -->
-                <section>
+                <section id="gallery">
                     <header class="major">
                       <h2>Gallery</h2>
                     </header>
                     <div class="posts">
                     {% for research in research_sorted limit: 6 %}
                       <article>
-                        <a class="image" href="{{research.site}}"><img src="{{site.url}}{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
+                        <a class="image" href="{{research.site}}" target="_blank"><img src="{{site.url}}{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
                         <h3>{{ research.title }}</h3>
                         <p>{{ research.teasing }}</p>
                         <ul class="actions">
-                            <li><a href="{{research.site}}" class="button medium">More</a></li>
+                            <li><a href="{{research.site}}" target="_blank" class="button medium">More</a></li>
                         </ul>
                       </article>
                     {% endfor %}

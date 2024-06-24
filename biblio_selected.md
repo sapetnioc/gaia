@@ -4,7 +4,7 @@ layout: page_select
 permalink: bibliography/bestof.html
 ---
 
-<h2> Selected publications of the {{site.title}} unit </h2>
+<h2> Selected publications of the {{site.title}}</h2>
 
 {% assign today = site.time | date: '%Y' %}
 {% assign biblio_sorted = site.biblio | sort: 'year' | reverse %}
@@ -15,7 +15,7 @@ permalink: bibliography/bestof.html
     {% if entry.year > year and entry.bestof %}
     <li>
       <div class="text-justify  {{entry.cat}} {{entry.subcat}}">
-        -
+        &#x2022;
         {% if entry.journal %}
             {{entry.author}}: {{entry.title}}, {{entry.journal}} ({{entry.year}})
         {% elsif entry.booktitle %}

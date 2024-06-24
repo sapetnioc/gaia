@@ -5,7 +5,7 @@ cat: gaia
 subcat: cell
 teasing: Our goal is to meet the specific needs of NeuroSpin researchers for software development and analysis of heterogeneous brain data (neuroimaging, omics, clinical and behavioural data) used in the context of research conducted in clinical neuroscience, population imaging or cognitive neuroscience research.
 leader: Antoine Grigis
-icon: platform.png
+icon: platform.jpg
 added: 2020
 permalink: cells/gaia-platform.html
 ---

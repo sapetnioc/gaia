@@ -40,11 +40,11 @@
                         <div class="posts">
                         {% for research in research_sorted limit: 20 %}
                           <article>
-                            <a class="image" href="{{research.site}}"><img src="{{site.url}}{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
+                            <a class="image" href="{{research.site}}" target="_blank"><img src="{{site.url}}{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
                             <h3>{{ research.title }}</h3>
                             <p>{{ research.teasing }}</p>
                             <ul class="actions">
-                                <li><a href="{{research.site}}" class="button medium">More</a></li>
+                                <li><a href="{{research.site}}" target="_blank" class="button medium">More</a></li>
                             </ul>
                           </article>
                         {% endfor %}

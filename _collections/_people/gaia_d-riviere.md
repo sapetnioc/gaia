@@ -1,6 +1,7 @@
 ---
 layout:
 name: Denis Rivière
+desc: PhD
 position: pi
 cat: gaia
 subcat: architecture

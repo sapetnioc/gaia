@@ -29,26 +29,17 @@ permalink: /people/
   {% for profile in people_sorted %}
     {% if profile.position contains item %}
     <div class="list-item-people {{profile.cat|replace: ' ', '-'}} {{profile.subcat|replace: ' ', '-'}}">
-      <p class="list-post-title">
-        {% if profile.site %}
-            <a href="{{ profile.site }}">
-        {% elsif profile.page %}
-            <a href="{{site.url}}{{site.baseurl}}/{{ profile.url }}">
-        {% else %}
-            <a>
-        {% endif %}
-        {% if profile.avatar %}
-            <img width="200" src="{{site.url}}{{site.baseurl}}/images/people/{{profile.avatar}}"></a>
-        {% else %}
-            <img width="200" src="{{site.url}}{{site.baseurl}}/images/people/default.png"></a>
-        {% endif %}
-        {% if profile.site %}
-            <a class="name" href="{{ profile.site }}">{{ profile.name }}</a>
-        {% elsif profile.page %}
-            <a class="name" href="{{site.url}}{{site.baseurl}}/{{ profile.url }}">{{ profile.name }}</a>
-        {% else %}
-            <a class="name">{{ profile.name }}</a>
-        {% endif %}
+      <p style="text-align: left; padding-left: 5em; margin: 0;">
+          {% if profile.site %}
+            <a class="name" href="{{profile.site}}">
+          {% endif %}
+          {{profile.name}}
+          {% if profile.desc %}
+          - {{profile.desc}}
+          {% endif %}
+          {% if profile.site %}
+            </a>
+          {% endif %}
       </p>
     </div>
     {% endif %}

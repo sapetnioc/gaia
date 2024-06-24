@@ -1,6 +1,7 @@
 ---
 layout:
 name: Antoine Grigis
+desc: HdR
 position: engineer
 cat: gaia
 subcat: platform

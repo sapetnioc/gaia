@@ -1,6 +1,7 @@
 ---
 layout:
 name: Edouard Duchesnay
+desc: HdR
 position: pi
 cat: gaia
 subcat: signature
