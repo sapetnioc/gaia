@@ -18,11 +18,11 @@ import yaml
 doc = """
 Convert BIBTEX to MD.
 Must install first pybtex.
-python3 bib2md -i data/architecture_v-20240621.bib -o out/architecture -c gaia -s architecture
-python3 bib2md -i data/signature_v-20240621.bib -o out/signature -c gaia -s signature
-python3 bib2md -i data/brainomics_v-20240621.bib -o out/brainomics -c gaia -s brainomics
-python3 bib2md -i data/platform_v-20240621.bib -o out/platform -c gaia -s platform
-python3 bib2md -i data/ginkgo_v-20240621.bib -o out/ginkgo -c gaia -s ginkgo
+python3 bib2md -i data/architecture_v-20240621.bib -o ../_collections/_biblio/architecture -c gaia -s architecture
+python3 bib2md -i data/signature_v-20240621.bib -o ../_collections/_biblio/signature -c gaia -s signature
+python3 bib2md -i data/brainomics_v-20240621.bib -o ../_collections/_biblio/brainomics -c gaia -s brainomics
+python3 bib2md -i data/platform_v-20240621.bib -o ../_collections/_biblio/platform -c gaia -s platform
+python3 bib2md -i data/ginkgo_v-20240621.bib -o ../_collections/_biblio/ginkgo -c gaia -s ginkgo
 """
 parser = argparse.ArgumentParser(description=doc)
 parser.add_argument(
@@ -38,6 +38,11 @@ parser.add_argument(
     "-s", "--subcat",
     help="the category.")
 args = parser.parse_args()
+
+
+# Create output directory
+if not os.path.isdir(args.outdir):
+    os.mkdir(args.outdir)
 
 
 # Convert bib to yaml with pybtex-convert
@@ -61,7 +66,7 @@ for key, item in biblio.items():
     item["author"] = "{0} {1} et al.".format(
         item["author"][0]["first"],
         item["author"][0]["last"])
-    md_file = os.path.join(args.outdir, key + ".md")
+    md_file = os.path.join(args.outdir, f"{args.subcat}_{key}.md")
     content = ["---", f"cat: {args.cat}", f"subcat: {args.subcat}",
                "bestof: false"]
     for _key in ["author", "title", "journal", "year", "type", "url", "doi",
@@ -79,3 +84,6 @@ for key, item in biblio.items():
     with open(md_file, "wt") as of:
         of.write("\n".join(content))
     
+
+# Cleaning
+os.remove(bibfile)

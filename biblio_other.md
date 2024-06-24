@@ -8,7 +8,7 @@ permalink: bibliography.html
 <h2> Publications of the {{site.title}} </h2>
 
 {% assign today = site.time | date: '%Y' %}
-{% assign biblio_sorted = site.biblio | sort: 'year' | reverse %}
+{% assign biblio_sorted = site.biblio | sort: 'subcat' | reverse %}
 
 {% for idx in (0..4) %}
 
@@ -18,9 +18,16 @@ permalink: bibliography.html
 <h3>{{year}}</h3>
 </div>
 
+{% assign section = "" %}
 <div class="bibliography">
   {% for entry in biblio_sorted %}
     {% if entry.year == year %}
+        {% if section != entry.subcat %}
+            {% assign section = entry.subcat %}
+            <div class="text-justify {{entry.cat}} {{entry.subcat}}">
+            <b>{{section|upcase}}:</b>
+            </div>
+        {% endif %}
     <li>
       <div class="text-justify {{entry.cat}} {{entry.subcat}}">
         &#x2022;
