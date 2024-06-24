@@ -31,7 +31,7 @@ permalink: /people/
     <div class="list-item-people {{profile.cat|replace: ' ', '-'}} {{profile.subcat|replace: ' ', '-'}}">
       <p style="text-align: left; padding-left: 5em; margin: 0;">
           {% if profile.site %}
-            <a class="name" href="{{profile.site}}">
+            <a class="name" href="{{profile.site}}" target="_blank">
           {% endif %}
           {{profile.name}}
           {% if profile.desc %}
