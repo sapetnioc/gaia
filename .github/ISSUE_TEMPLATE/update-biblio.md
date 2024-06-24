@@ -7,7 +7,13 @@ assignees: ''
 
 ---
 
-**How to update the bibliography?**
-- Laboratory:
-- Team:
-- Just join a valid bibtex that contains the references you want to add.
+**Team**
+- [ ] ARCHITECTURE
+- [ ] BRAINOMICS
+- [ ] GINKGO
+- [ ] SIGNATURE
+- [ ] CATI
+- [ ] Platform
+
+**Do not forget**
+- Upload a valid bibtex that contains the references you want to add.

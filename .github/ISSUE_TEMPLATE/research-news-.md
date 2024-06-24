@@ -9,9 +9,16 @@ assignees: ''
 
 **Research details**
 - Title:
-- Laboratory:
-- Team:
-- Teasing:  a 300 character long (spaces included) sentences for an appealing introduction
+- Associated paper/code URL:
+- Teasing: a ~300 character sentence (including spaces) for an appealing introduction
+
+**Team**
+- [ ] ARCHITECTURE
+- [ ] BRAINOMICS
+- [ ] GINKGO
+- [ ] SIGNATURE
+- [ ] CATI
+- [ ] Platform
 
 **Do not forget**
-- Upload the graphical abstract of your reserach story: \<YEAR\>_\<CUSTOM\>.png
+- Upload a graphical abstract of your reserach story: \<YEAR\>_\<CUSTOM\>.png
