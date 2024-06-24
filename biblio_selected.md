@@ -16,15 +16,17 @@ permalink: bibliography/bestof.html
     <li>
       <div class="text-justify  {{entry.cat}} {{entry.subcat}}">
         &#x2022;
-        {% if entry.journal %}
-            {{entry.author}}: {{entry.title}}, {{entry.journal}} ({{entry.year}})
-        {% elsif entry.booktitle %}
-            {{entry.author}}: {{entry.title}}, {{entry.booktitle}} ({{entry.year}})
-        {% else %}
-            {{entry.author}}: {{entry.title}} ({{entry.year}})
-        {% endif %}
         {% if entry.doi %}
-          <a href="http://doi.org/{{entry.doi}}" class="icon fa-500px" target="_blank"><span class="label">DOI</span></a>
+          {% capture title %}<a href="http://doi.org/{{entry.doi}}" target="_blank">{{entry.title}}</a>{% endcapture %}
+        {% else %}
+          {% assign title = {{entry.title}} %}  
+        {% endif %}
+        {% if entry.journal %}
+            {{entry.author}}: {{title}}, {{entry.journal}} ({{entry.year}})
+        {% elsif entry.booktitle %}
+            {{entry.author}}: {{title}}, {{entry.booktitle}} ({{entry.year}})
+        {% else %}
+            {{entry.author}}: {{title}} ({{entry.year}})
         {% endif %}
       </div>
     </li>
