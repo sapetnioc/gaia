@@ -16,8 +16,7 @@ permalink: teams/gaia-signature.html
 <div class="content">
   <header><p>{{ page.title }} team</p></header>
   <p>
-​   Our team focuses on the design of cutting-edge machine learning and statistical models to uncover neural signatures that can predict psychiatric disorders. Our goal is to harness the power of data by overseeing the effective management of multiple large-scale national and European initiatives. This will allow us to train and refine AI models to their fullest potential. ​
-  ​​Our team seeks to decipher the variability of the cortical folding pattern, which we consider as a proxy of cortical architecture. We develop supervised deep learning approaches to identify the cortical sulci of a nomenclature, in order to perform their morphometry. We also design unsupervised deep learning approaches to generate a dictionary of the folding patterns existing in the general population, and to automatically define gyration anomalies. Our work is based on about 100,000 healthy and pathological brains, from the early stages of folding to advanced age. We also perform comparative studies with great apes.
+​   The signature team focuses on the design of cutting-edge machine learning and statistical models to uncover neural signatures that can predict psychiatric disorders. Our goal is to harness the power of data by overseeing the effective management of multiple large-scale national and European initiatives. This will allow us to train and refine AI models to their fullest potential.
   </p>
   <p>
     <b> Leader: </b>
