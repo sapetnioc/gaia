@@ -41,6 +41,23 @@ For Bibtex conversion:
 - pip install pybtex
 - pybtex-convert biblio.bib biblio.yaml
 
+# Install with [Pixi](http://pixi.sh)
+
+```
+git clone https://github.com/neurospin/gaia
+cd gaia
+pixi init
+pixi shell
+pixi add ruby gcc gxx pybtex gfortran
+gem install jekyll bundler
+# Fix a problem in the bundle script
+ln -s ../../../bin/ruby .pixi/envs/default/share/rubygems/bin/ruby
+bundle init
+bundle add jekyll webrick
+bundle install
+bundle exec jekyll serve --livereload --port 8080
+```
+
 # Jekyll
 
 For those unfamiliar with how Jekyll works, check out [https://jekyllrb.com/](https://jekyllrb.com/) for all the details.
